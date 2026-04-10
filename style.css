@@ -36,6 +36,8 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 body {
@@ -43,6 +45,8 @@ body {
     color: var(--black);
     line-height: 1.6;
     overflow-x: hidden;
+    width: 100%;
+    position: relative;
 }
 
 /* ROUTING CLASSES */
@@ -296,8 +300,9 @@ img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top center;
     z-index: -1;
-    opacity: 0.75; /* Increased visibility further */
+    opacity: 0.9; /* Increased visibility as requested */
 }
 
 /* Overlay to ensure text readability */
@@ -308,7 +313,7 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(224, 242, 254, 0.4), rgba(255, 255, 255, 0.4));
+    background: linear-gradient(to bottom, rgba(224, 242, 254, 0.3), rgba(255, 255, 255, 0.3));
     z-index: 0;
 }
 
