@@ -49,6 +49,11 @@ body {
     position: relative;
 }
 
+/* STANDALONE PAGE FIX: Add space for fixed navbar */
+body:not(.home-page) main {
+    padding-top: 80px;
+}
+
 /* ROUTING CLASSES */
 .route-section {
     animation: fadeIn 0.4s ease-out;
@@ -932,15 +937,16 @@ img {
 /* INTERNAL PAGE HEADER */
 .page-header {
     background: var(--primary-blue);
-    padding: 85px 0 35px;
+    padding: 30px 0 20px;
     text-align: center;
     color: var(--white);
     margin-bottom: 36px;
 }
 
-.page-header h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
+.page-header h1,
+.page-header h2 {
+    font-size: 2.2rem;
+    margin-bottom: 5px;
 }
 
 .breadcrumb {
