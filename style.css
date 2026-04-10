@@ -1493,10 +1493,19 @@ img {
     }
 
     .about-container,
-    .contact-wrapper,
-    .footer-grid {
+    .contact-wrapper {
         grid-template-columns: 1fr;
         gap: 16px;
+    }
+
+    /* Footer: 2-column horizontal on mobile */
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1; /* Logo/desc spans full width */
     }
 
     .media-stack {
