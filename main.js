@@ -197,11 +197,10 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (bgContainer && typeTarget) {
         const bgAssets = [
-            { type: 'image', src: '/src/assets/hero_bg.png' },
-            { type: 'image', src: '/src/image-video/img1.jpeg' },
-            { type: 'video', src: '/src/image-video/vid1.mp4' },
-            { type: 'video', src: '/src/image-video/vid2.mp4' },
-            { type: 'video', src: '/src/image-video/vid3.mp4' }
+            { type: 'image', src: '/image-video/img1.jpeg' },
+            { type: 'image', src: '/image-video/img2.jpeg' },
+            { type: 'video', src: '/image-video/vid1.mp4' },
+            { type: 'video', src: '/image-video/vid3.mp4' }
         ];
 
         const typingSentences = [
