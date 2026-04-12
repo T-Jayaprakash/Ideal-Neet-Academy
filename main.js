@@ -191,4 +191,94 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // 8. HERO TRANSITIONS (Background & Typing)
+    const bgContainer = document.querySelector('.hero-bg-container');
+    const typeTarget = document.getElementById('type-target');
+    
+    if (bgContainer && typeTarget) {
+        const bgAssets = [
+            { type: 'image', src: '/src/assets/hero_bg.png' },
+            { type: 'image', src: '/src/image-video/img1.jpeg' },
+            { type: 'video', src: '/src/image-video/vid1.mp4' },
+            { type: 'video', src: '/src/image-video/vid2.mp4' },
+            { type: 'video', src: '/src/image-video/vid3.mp4' }
+        ];
+
+        const typingSentences = [
+            "Trichy's Affordable NEET Academy",
+            "Trichy's Leading NEET Academy",
+            "Best Result Oriented Coaching"
+        ];
+
+        let currentAssetIdx = 0;
+        let sentenceIdx = 0;
+        let charIdx = 0;
+        let isDeleting = false;
+
+        // Background Carousel Logic
+        function updateBackground() {
+            const asset = bgAssets[currentAssetIdx];
+            bgContainer.innerHTML = '';
+            
+            const bgItem = document.createElement('div');
+            bgItem.className = 'hero-bg-item active';
+            
+            if (asset.type === 'video') {
+                const video = document.createElement('video');
+                video.src = asset.src;
+                video.autoplay = true;
+                video.muted = true;
+                video.playsInline = true;
+                video.style.width = '100%';
+                video.style.height = '100%';
+                video.style.objectFit = 'cover';
+                video.onended = () => {
+                    currentAssetIdx = (currentAssetIdx + 1) % bgAssets.length;
+                    updateBackground();
+                };
+                bgItem.appendChild(video);
+            } else {
+                const img = document.createElement('img');
+                img.src = asset.src;
+                img.style.width = '100%';
+                img.style.height = '100%';
+                img.style.objectFit = 'cover';
+                bgItem.appendChild(img);
+                
+                setTimeout(() => {
+                    currentAssetIdx = (currentAssetIdx + 1) % bgAssets.length;
+                    updateBackground();
+                }, 5000);
+            }
+            bgContainer.appendChild(bgItem);
+        }
+
+        // Typing Effect Logic
+        function type() {
+            const currentSentence = typingSentences[sentenceIdx];
+            const typingSpeed = isDeleting ? 50 : 100;
+
+            if (!isDeleting && charIdx < currentSentence.length) {
+                typeTarget.textContent += currentSentence.charAt(charIdx);
+                charIdx++;
+                setTimeout(type, typingSpeed);
+            } else if (isDeleting && charIdx > 0) {
+                typeTarget.textContent = currentSentence.substring(0, charIdx - 1);
+                charIdx--;
+                setTimeout(type, typingSpeed);
+            } else if (!isDeleting && charIdx === currentSentence.length) {
+                setTimeout(() => {
+                    isDeleting = true;
+                    type();
+                }, 2000);
+            } else if (isDeleting && charIdx === 0) {
+                isDeleting = false;
+                sentenceIdx = (sentenceIdx + 1) % typingSentences.length;
+                setTimeout(type, 500);
+            }
+        }
+
+        updateBackground();
+        type();
+    }
 });

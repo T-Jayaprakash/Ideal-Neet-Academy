@@ -118,14 +118,18 @@
         <!-- 1. HOME CONTEXT WRAPPER -->
         <div class="route-section" id="home">
             <section class="hero">
-                <picture>
-                    <source media="(max-width: 768px)" srcset="/src/assets/mobile_hero_bg.jpg">
-                    <img src="/src/assets/hero_bg.png" class="img" alt="Hero Background">
-                </picture>
+                <div class="hero-bg-container">
+                    <div class="hero-bg-item active">
+                        <img src="/src/assets/hero_bg.png" alt="Hero Background">
+                    </div>
+                </div>
+                <div class="hero-overlay"></div>
+                
                 <div class="container hero-container" data-aos="fade-up">
-
-                    <h1 class="hero-title">Trichy's Leading <br><span class="highlight"
-                            style="color:var(--primary-yellow)">NEET Academy</span></h1>
+                    <h1 class="hero-title">
+                        <span class="academy-name">IDEAL NEET Academy</span>
+                        <span class="typing-text"><span id="type-target"></span><span class="typing-cursor"></span></span>
+                    </h1>
                     <p class="hero-subtitle">Premium coaching for medical aspirants. Achieve your dream of becoming a
                         doctor with expert faculty, high-quality study materials, and proven results.</p>
                     <div class="hero-btns">
@@ -147,16 +151,14 @@
 
                     <div class="features-grid">
                         <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
-                            <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&q=80&w=400"
+                            <img src="/src/image-video/img1.jpeg"
                                 alt="Expert NEET Faculty at Ideal Academy Trichy"
                                 class="feature-card-img" loading="lazy">
                             <h3>Expert & Experienced Faculty</h3>
                             <p>Learn from the best mentors in the industry.</p>
                         </div>
                         <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
-                            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=400"
-                                alt="Batch Sizes"
-                                class="feature-card-img" loading="lazy">
+                             <video src="/src/image-video/vid3.mp4" class="feature-card-video" autoplay muted loop playsinline></video>
                             <h3>Small Batch Sizes</h3>
                             <p>Personalized attention for every individual student.</p>
                         </div>
@@ -168,9 +170,7 @@
                             <p>Regular practice to build exam-winning confidence.</p>
                         </div>
                         <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
-                            <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&q=80&w=400"
-                                alt="Mentorship"
-                                class="feature-card-img" loading="lazy">
+                             <video src="/src/image-video/vid1.mp4" class="feature-card-video" autoplay muted loop playsinline></video>
                             <h3>Personalized Mentorship</h3>
                             <p>One-on-one guidance to track your progress.</p>
                         </div>
@@ -182,9 +182,7 @@
                             <p>Quality education accessible to everyone.</p>
                         </div>
                         <div class="feature-card" data-aos="fade-up" data-aos-delay="600">
-                            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=400"
-                                alt="Learning Environment"
-                                class="feature-card-img" loading="lazy">
+                             <video src="/src/image-video/vid2.mp4" class="feature-card-video" autoplay muted loop playsinline></video>
                             <h3>Positive Learning Environment</h3>
                             <p>Motivating atmosphere to keep you focused.</p>
                         </div>
@@ -406,6 +404,12 @@
                     </div>
 
                     <div class="media-stack" data-aos="fade-up">
+                        <!-- Academy Highlight Images -->
+                        <div class="gallery-photo-grid" style="grid-column: 1 / -1; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-bottom: 20px;">
+                            <img src="/src/image-video/img1.jpeg" alt="Academy Activity 1" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                            <img src="/src/image-video/img2.jpeg" alt="Academy Activity 2" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                        </div>
+
                         <!-- Real Classroom Image -->
                         <div class="classroom-full-img" data-aos="fade-up" style="grid-column: 1 / -1; margin-bottom: 20px;">
                             <img src="/src/assets/neet_class.png" alt="State-of-the-art Classroom at Ideal NEET Academy Trichy" 
