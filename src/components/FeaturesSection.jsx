@@ -30,7 +30,7 @@ export default function FeaturesSection() {
     <section className="features-section" id="features">
       <div className="features-container">
         <div className="features-header">
-          <h2 className="gradient-text">Why Choose Ideal NEET?</h2>
+          <h2 className="gradient-text">Why Choose IDEAL NEET?</h2>
           <p>We provide everything you need to secure your top medical college seat.</p>
         </div>
 

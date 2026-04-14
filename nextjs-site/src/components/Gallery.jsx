@@ -83,7 +83,7 @@ export default function Gallery() {
     <section className="gallery section-padding" id="gallery" aria-label="Academy Gallery">
       <div className="container">
         <div className="section-header">
-          <h2 className="section-title">Life at Ideal NEET Academy</h2>
+          <h2 className="section-title">Life at IDEAL NEET Academy</h2>
           <div className="title-underline" />
         </div>
 

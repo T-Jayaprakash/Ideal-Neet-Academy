@@ -6,7 +6,7 @@ export default function Footer() {
     <>
       <div className="pre-footer-cta">
         <div className="container">
-          <h3>Ready to Crack NEET? Join Ideal Academy Today</h3>
+          <h3>Ready to Crack NEET? Join IDEAL Academy Today</h3>
           <div className="pre-footer-btns">
             <a href="#programs" className="btn btn-outline">
               Explore Batch Options

@@ -65,7 +65,7 @@ export default function About() {
           </div>
         </div>
 
-        <h3 className="mini-title">Why Choose Ideal NEET?</h3>
+        <h3 className="mini-title">Why Choose IDEAL NEET?</h3>
         <div className="advantage-grid">
           {advantages.map((adv, idx) => {
             const Icon = adv.icon;
