@@ -1,7 +1,6 @@
 const programs = [
   {
-    title: "Foundation Batch",
-    target: "Class 11 | Class 12",
+    title: "Class 11 | Class 12",
     features: ["Comprehensive Syllabus", "Weekly Assessments", "Core Subject Focus"],
     waLink:
       "https://wa.me/917358603244?text=Hi%2C%20I%20would%20like%20to%20inquire%20about%20the%20Foundation%20Batch",

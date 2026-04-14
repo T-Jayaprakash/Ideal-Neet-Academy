@@ -718,6 +718,14 @@ img {
     box-shadow: var(--shadow-soft);
     position: relative;
     border: 3px solid var(--primary-blue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.offer-card .btn {
+    margin-top: auto;
 }
 
 .offer-card.popular {
@@ -968,6 +976,23 @@ img {
     transition: var(--transition-smooth);
 }
 
+.gallery-featured {
+    width: 100%;
+    margin-bottom: 24px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    border: 3px solid var(--primary-yellow);
+    background: #000;
+}
+
+.fam-banner {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain; /* Guaranteeing no cropping whatsoever */
+}
+
 .gallery-item:hover {
     transform: scale(1.02);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
@@ -1003,7 +1028,12 @@ img {
 @media (max-width: 1024px) {
     .media-stack {
         grid-template-columns: repeat(3, 1fr);
-        grid-auto-rows: 200px;
+        grid-auto-rows: 180px;
+    }
+
+    .gallery-featured {
+        border-radius: 12px;
+        margin-bottom: 16px;
     }
 
     .classroom-box {
@@ -1402,16 +1432,30 @@ img {
     right: 30px;
     z-index: 9999;
     text-decoration: none;
+    transition: var(--transition-smooth);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.whatsapp-icon {
-    width: 44px;
-    height: 44px;
+.whatsapp-float img {
+    width: 100%;
+    height: 100%;
     object-fit: contain;
+    border-radius: 50%;
 }
 
 .whatsapp-float:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
+}
+
+.whatsapp-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
 }
 
 .social-links {
@@ -1640,9 +1684,10 @@ img {
         overflow-x: auto;
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
-        gap: 10px;
-        padding: 20px 0 8px;
+        gap: 15px;
+        padding: 24px 20px; /* Added side padding to fix 'improper size' look */
         scrollbar-width: none;
+        align-items: stretch; /* Ensures all cards have the same height */
     }
 
     .offers-grid::-webkit-scrollbar {
@@ -1755,8 +1800,14 @@ img {
 
     .media-stack {
         grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: 150px;
+        grid-auto-rows: 140px;
         gap: 10px;
+    }
+
+    .gallery-featured {
+        border-radius: 12px;
+        margin-bottom: 12px;
+        border-width: 2px;
     }
 
     .gallery-item:nth-child(5) {
