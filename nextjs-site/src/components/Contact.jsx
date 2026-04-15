@@ -137,7 +137,9 @@ export default function Contact() {
               </div>
               <div>
                 <h4>Email</h4>
-                <p>contact@idealneetacademy.com</p>
+                <p>
+                  <a href="mailto:idealneetacademy@gmail.com">idealneetacademy@gmail.com</a>
+                </p>
               </div>
             </div>
 

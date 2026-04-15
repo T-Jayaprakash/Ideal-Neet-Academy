@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { MapPin, Phone, MessageCircle } from "lucide-react";
+import { MapPin, Phone, MessageCircle, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -89,6 +89,10 @@ export default function Footer() {
               <div className="footer-contact-item">
                 <Phone size={18} />
                 <a href="tel:+917358603244">+91 7358603244</a>
+              </div>
+              <div className="footer-contact-item">
+                <Mail size={18} />
+                <a href="mailto:idealneetacademy@gmail.com">idealneetacademy@gmail.com</a>
               </div>
               <div className="social-links">
                 <a
