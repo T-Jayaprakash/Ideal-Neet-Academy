@@ -93,7 +93,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Priority 2: Scroll to Path-based section (e.g. /about)
-        let normalizedPath = path === '/' || path === '/index.html' ? 'home' : path.replace(/\.html$/, '').substring(1);
+        // Adjust for subpaths (like /Ideal-Neet-Academy/)
+        const baseName = window.location.pathname.split('/').filter(Boolean).pop() || 'home';
+        let normalizedPath = baseName.replace(/\.html$/, '');
+        if (normalizedPath === 'index' || normalizedPath === 'Ideal-Neet-Academy') normalizedPath = 'home';
+        
         const targetSection = document.getElementById(normalizedPath);
         
         if (targetSection) {
@@ -113,10 +117,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const href = anchor.getAttribute('href');
         const target = anchor.getAttribute('target');
         
-        // Skip external, blank, or non-relative links
-        if (!href || !href.startsWith('/') || target === '_blank') return;
+        // Skip external, blank, or absolute links (unless they are to the same origin)
+        if (!href || target === '_blank' || href.startsWith('http')) return;
 
-        const onHomePage = window.location.pathname === '/' || window.location.pathname === '/index.html' || window.location.pathname === '/home';
+        const onHomePage = window.location.pathname.endsWith('/') || window.location.pathname.endsWith('/index.html') || window.location.pathname.endsWith('/home');
         const isHashLink = href.includes('#');
 
         // Navigation logic:
@@ -126,8 +130,9 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if (onHomePage) {
             // Try to see if target exists on current page
-            const targetId = isHashLink ? href.split('#')[1] : href.substring(1);
-            if (document.getElementById(targetId) || targetId === '' || targetId === 'home') {
+            // Handle both relative and absolute-style paths
+            let targetId = isHashLink ? href.split('#')[1] : href.replace(/^\.\//, '').replace(/^\//, '');
+            if (document.getElementById(targetId) || targetId === '' || targetId === 'home' || targetId === '.') {
                 e.preventDefault();
                 window.history.pushState(null, '', href);
                 router();
